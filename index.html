@@ -3,42 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="author" content="Sam Siamon">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- link in bootstrap framework -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- link in font families -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+  <!-- link css stylesheet -->
+  <link rel="stylesheet" href="stylesheet.css">
+  <!-- link in ajax -->
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- link in js -->
+  <script src="index.js"></script>
 </head>
 <body>
+  <h1>SPLITTER</h1>
+  <main class="col-sm-6">
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div>
+                  <div class="row">
+                    <label for="billTotal"><h2>Bill</h2></label>
+                  </div>
+                  <div class="row">
+                    <input type="number" id="billTotal" name="billTotal" placeholder="0.00">
+                  </div>
+                  <br>
+              </div>
+              <br>
+              <div>
+                
+                  <label for="tipPercent"><h2>Select Tip %</h2></label>
+                  <input type="button" class="btn btn-primary btn-m" id="tenTip" name="tenTip" value="10%">
+                  <input type="button" class="btn btn-primary btn-m" id="fiveTip" name="fiveTip" value="5%">
+                  <input type="button" class="btn btn-primary btn-m" id="fifteenTip" name="fifteenTip" value="15%">
+                  <input type="button" class="btn btn-primary btn-m" id="twentyFiveTip" name="twentyFiveTip" value="25%">
+                  <input type="button" class="btn btn-primary btn-m" id="fiftyTip" name="fiftyTip" value="50%">
+                  <input type="button" class="btn btn-primary btn-m" id="customTip" name="customTip" value="Custom">
+              </div>
+              <br>
+              <div>
+                  <label for="peopleTotal"><h2>Number of People</h2></label>
+                  <input type="number" id="peopleTotal" name="peopleTotal" placeholder="1"><br>
+              </div>
+            </div>
+            <div class="col" id="splitCard">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                    <h2>Tip Amount</h2>
+                    <p>/ person</p>
+                    </div>
+                    <div class="col">
 
-  Bill
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class="col">
+                    <h2>Total</h2>
+                    <p>/ person</p>
+                    </div>
+                    <div class="col">
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <button id="resetButton" class="btn btn-primary btn-block btn-lg">RESET</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Sam Siamon</a>.
   </div>
 </body>
 </html>
