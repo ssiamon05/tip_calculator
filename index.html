@@ -13,79 +13,80 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <!-- link css stylesheet -->
-  <link rel="stylesheet" href="stylesheet.css">
-  <!-- link in ajax -->
-  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <!-- link in js -->
-  <script src="index.js"></script>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <script src="js/index.js"></script>
 </head>
 <body>
-  <h1>SPLITTER</h1>
   <main class="col-sm-6">
-    <div class="row">
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col">
-              <div>
-                  <div class="row">
-                    <label for="billTotal"><h2>Bill</h2></label>
-                  </div>
-                  <div class="row">
-                    <input type="number" id="billTotal" name="billTotal" placeholder="0.00">
-                  </div>
-                  <br>
-              </div>
-              <br>
-              <div>
-                
-                  <label for="tipPercent"><h2>Select Tip %</h2></label>
-                  <input type="button" class="btn btn-primary btn-m" id="tenTip" name="tenTip" value="10%">
-                  <input type="button" class="btn btn-primary btn-m" id="fiveTip" name="fiveTip" value="5%">
-                  <input type="button" class="btn btn-primary btn-m" id="fifteenTip" name="fifteenTip" value="15%">
-                  <input type="button" class="btn btn-primary btn-m" id="twentyFiveTip" name="twentyFiveTip" value="25%">
-                  <input type="button" class="btn btn-primary btn-m" id="fiftyTip" name="fiftyTip" value="50%">
-                  <input type="button" class="btn btn-primary btn-m" id="customTip" name="customTip" value="Custom">
-              </div>
-              <br>
-              <div>
-                  <label for="peopleTotal"><h2>Number of People</h2></label>
-                  <input type="number" id="peopleTotal" name="peopleTotal" placeholder="1"><br>
-              </div>
-            </div>
-            <div class="col" id="splitCard">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                    <h2>Tip Amount</h2>
-                    <p>/ person</p>
+    <h1>SPLITTER</h1>
+    <form>
+      <div class="row">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <div>
+                    <div class="row">
+                      <label for="billTotal"><h2>Bill</h2></label>
                     </div>
-                    <div class="col">
+                    <div class="row">
+                      <input type="number" id="billTotal" name="billTotal" placeholder="0.00" onchange="totalBillUpdate(event)">
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div id='buttonBox'>
+                    <label for='tipButtons'><h2>Select Tip %</h2></label>
+                    <div id="buttonGroup">
+                      <input class="btn btn-md btn-primary" type='button' value='10%' onclick="setTipPercent(event)">
+                      <input class="btn btn-md btn-primary" type='button' value='15%' onclick="setTipPercent(event)">
+                      <input class="btn btn-md btn-primary" type='button' value='20%' onclick="setTipPercent(event)">
+                      <input class="btn btn-md btn-primary" type='button' value='25%' onclick="setTipPercent(event)">
+                      <input class="btn btn-md btn-primary" type='button' value='50%' onclick="setTipPercent(event)">
+                      <input class="btn btn-md btn-primary" type='button' value='Custom' onclick="setTipPercent(event)">
+                    </div>
+                    <input type='hidden' id='percentNum'>
+                </div>
+                <br>
+                <div>
+                    <label for="peopleTotal"><h2>Number of People</h2></label>
+                    <input type="number" id="peopleTotal" name="peopleTotal" placeholder="1" onchange='totalPeopleUpdate(event)'><br>
+                </div>
+              </div>
+              <div class="col" id="splitCard">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                      <h2>Tip Amount</h2>
+                      <p>/ person</p>
+                      </div>
+                      <div class="col">
 
+                      </div>
                     </div>
-                  </div>
-                  <br>
-                  <div class="row">
-                    <div class="col">
-                    <h2>Total</h2>
-                    <p>/ person</p>
-                    </div>
-                    <div class="col">
+                    <br>
+                    <div class="row">
+                      <div class="col">
+                      <h2>Total</h2>
+                      <p>/ person</p>
+                      </div>
+                      <div class="col">
 
+                      </div>
                     </div>
+                    <br>
+                    <br>
+                    <br>
+                    <button id="resetButton" class="btn btn-primary btn-block btn-lg" type='reset'>RESET</button>
                   </div>
-                  <br>
-                  <br>
-                  <br>
-                  <button id="resetButton" class="btn btn-primary btn-block btn-lg">RESET</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
