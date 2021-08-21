@@ -24,7 +24,10 @@ main{
     border-color: transparent;
     padding-left: 1.5em;
     padding-right: 1.5em;
-    margin: 2em, 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
 }
 
 h2 {
@@ -63,3 +66,55 @@ h2 {
     background-color: turquoise;
     color:rgb(0, 66, 66);
 }
+
+
+  #billTotal, #peopleTotal, #percentNum{
+    background-color: rgb(230, 247, 248);
+    padding: 5px;
+    text-align: right;
+    border-radius: 5px;
+    border-color: transparent;
+  }
+
+  #billTotal {
+    background-image: url('images/icon-dollar.svg');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+  }
+
+  #peopleTotal {
+    background-image: url('images/icon-person.svg');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+  }
+
+  #percentNum {
+      margin-top: 5px;
+  }
+  
+  footer {
+      position: fixed;
+      bottom: 0;
+      padding: 10px 10px 0px 10px;
+  }
+
+  #display1 h1, #display2 h1 {
+      color: turquoise;
+      text-align: right;
+  }
+
+  #mainCard {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 10px;
+      border-color: white;
+      padding: 10px 20px;
+  }
+
+  input[type=number] {
+      width: 100%;
+  }
+
+  #mainHead {
+      text-align: center;
+      margin: 1.5em;
+  }

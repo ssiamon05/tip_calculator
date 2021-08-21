@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <meta name="author" content="Sam Siamon">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./css/images/favicon-32x32.png">
   <title>Frontend Mentor | Tip calculator app</title>
   <!-- link in bootstrap framework -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -12,16 +12,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" 
+          href=
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- link css stylesheet -->
   <link rel="stylesheet" href="css/stylesheet.css">
   <script src="js/index.js"></script>
 </head>
 <body>
   <main class="col-sm-6">
-    <h1>SPLITTER</h1>
+    <div id='mainHead'><img src="./css/images/logo.svg"></div>
     <form>
       <div class="row">
-        <div class="card">
+        <div class="card" id='mainCard'>
           <div class="card-body">
             <div class="row">
               <div class="col">
@@ -32,15 +35,15 @@
                     <div class="row">
                       <input type="number" id="billTotal" name="billTotal" placeholder="0.00" onchange="totalBillUpdate(event)">
                     </div>
-                    <br>
                 </div>
                 <br>
-                <div id='buttonBox'>
+                <br>
+                <div id='buttonBox' class="row">
                     <label for='tipButtons'><h2>Select Tip %</h2></label>
                     <div id="buttonGroup">
                       <input class="btn btn-md btn-primary" type='button' value='10%' onclick="setTipPercent(event)">
                       <input class="btn btn-md btn-primary" type='button' value='15%' onclick="setTipPercent(event)">
-                      <input class="btn btn-md btn-primary" type='button' value='20%' onclick="setTipPercent(event)">
+                      <input class="btn btn-md btn-primary" type='button' value='20%' id='defaultPercent' onclick="setTipPercent(event)">
                       <input class="btn btn-md btn-primary" type='button' value='25%' onclick="setTipPercent(event)">
                       <input class="btn btn-md btn-primary" type='button' value='50%' onclick="setTipPercent(event)">
                       <input class="btn btn-md btn-primary" type='button' value='Custom' onclick="setTipPercent(event)">
@@ -48,9 +51,14 @@
                     <input type='hidden' id='percentNum'>
                 </div>
                 <br>
+                <br>
                 <div>
+                  <div class='row'>
                     <label for="peopleTotal"><h2>Number of People</h2></label>
+                  </div>
+                  <div class="row">
                     <input type="number" id="peopleTotal" name="peopleTotal" placeholder="1" onchange='totalPeopleUpdate(event)'><br>
+                  </div>
                 </div>
               </div>
               <div class="col" id="splitCard">
@@ -61,7 +69,7 @@
                       <h2>Tip Amount</h2>
                       <p>/ person</p>
                       </div>
-                      <div class="col">
+                      <div class="col" id='display1'>
 
                       </div>
                     </div>
@@ -71,14 +79,14 @@
                       <h2>Total</h2>
                       <p>/ person</p>
                       </div>
-                      <div class="col">
+                      <div class="col" id="display2">
 
                       </div>
                     </div>
                     <br>
                     <br>
                     <br>
-                    <button id="resetButton" class="btn btn-primary btn-block btn-lg" type='reset'>RESET</button>
+                    <button id="resetButton" class="btn btn-primary btn-block btn-lg" type='reset' onclick="resetValues()">RESET</button>
                   </div>
                 </div>
               </div>
@@ -88,9 +96,11 @@
       </div>
     </form>
   </main>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Sam Siamon</a>.
-  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Sam Siamon</a>.
+    </div>
+  </footer>
 </body>
 </html>

@@ -2,6 +2,12 @@
 
 var billTotal, peopleTotal, tipPercent, billTotalNum, peopleTotalNum, tipPerPerson, totalPerPerson;
 peopleTotalNum = 1;
+billTotalNum = 0;
+tipPercent = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+    updatePerPersons();
+})
 
 function totalBillUpdate(event) {
     billTotal = document.querySelector('#billTotal');
@@ -29,6 +35,7 @@ function getTipPercent(event) {
 
 function setTipPercent(event) {
     let customInput = document.getElementById('percentNum');
+
     switch(event.target.value) {
         case '10%':
             tipPercent = 0.1;
@@ -69,4 +76,33 @@ function updatePerPersons() {
     totalPerPerson = Math.ceil((Math.ceil((billTotalNum / peopleTotalNum) * 100) / 100 + tipPerPerson) * 100) / 100;
     console.log(tipPerPerson);
     console.log(totalPerPerson);
+    updateDisplays();
 }
+
+function updateDisplays() {
+    let display1Box = document.getElementById('display1');
+    let display2Box = document.getElementById('display2');
+    let textDisplay1 = document.createElement('h1');
+    let textDisplay2 = document.createElement('h1');
+    textDisplay1.textContent = '$' + tipPerPerson.toFixed(2);
+    textDisplay2.textContent = '$' + totalPerPerson.toFixed(2);
+
+
+    if (display1Box.hasChildNodes()) {
+        display1Box.removeChild(display1Box.firstChild);
+    }
+    if (display2Box.hasChildNodes()) {
+        display2Box.removeChild(display2Box.firstChild);
+    }
+    display1Box.appendChild(textDisplay1);
+    display2Box.appendChild(textDisplay2);
+}
+
+    function resetValues() {
+        peopleTotalNum = 1;
+        billTotalNum = 0;
+        tipPercent = 0;
+        updatePerPersons();
+        updateDisplays();
+    }
+    
