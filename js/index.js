@@ -5,7 +5,7 @@ peopleTotalNum = 1;
 billTotalNum = 0;
 tipPercent = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     updatePerPersons();
 })
 
@@ -36,7 +36,7 @@ function getTipPercent(event) {
 function setTipPercent(event) {
     let customInput = document.getElementById('percentNum');
 
-    switch(event.target.value) {
+    switch (event.target.value) {
         case '10%':
             tipPercent = 0.1;
             customInput.setAttribute('type', 'hidden');
@@ -98,11 +98,10 @@ function updateDisplays() {
     display2Box.appendChild(textDisplay2);
 }
 
-    function resetValues() {
-        peopleTotalNum = 1;
-        billTotalNum = 0;
-        tipPercent = 0;
-        updatePerPersons();
-        updateDisplays();
-    }
-    
+function resetValues() {
+    peopleTotalNum = 1;
+    billTotalNum = 0;
+    tipPercent = 0;
+    updatePerPersons();
+    updateDisplays();
+}
